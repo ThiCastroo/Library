@@ -2,11 +2,11 @@
 {
     public class Unit
     {
-        private int id { get; set; }
-        private string name { get; set; }
-        private List<Book> books { get; set; }
-        private Address address { get; set; }
-        private Rental rental { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public List<Book> books { get; set; }
+        public Address address { get; set; }
+        public Rental rental { get; set; }
 
         public Unit() { }
 
@@ -38,9 +38,9 @@
         {
             if (book.category.name == "Técnico")
             {
-                rentalPrice *= 0.9m; // 10% discount
+                rentalAmount *= 0.9m; // 10% discount
             }
-            return $"Rental made for Vila Olimpia with price {rentalPrice}.";
+            return $"Rental made for Vila Olimpia with price {rentalAmount}.";
         }
 
     }
@@ -49,8 +49,8 @@
 
         internal override string bookReservation()
         {
-            rentalPrice *= 0.85m; // 15% student discount
-            return $"Rental made for Aclimação with special student price: {rentalPrice}.";
+            rentalAmount *= 0.85m; // 15% student discount
+            return $"Rental made for Aclimação with special student price: {rentalAmount}.";
         }
 
     }

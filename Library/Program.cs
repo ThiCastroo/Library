@@ -1,26 +1,26 @@
 ﻿using LibraryService.Models;
 
 Console.WriteLine("Starting Program...");
-Console.WriteLine("Instancing classes");
+Console.WriteLine("Instancing classes" + "\n");
 
-var unit = new Unit();
-var address  = new Address();
-var person = new Person();
-var rental  = new Rental();
+Console.WriteLine("Instantiating a list of books" + "\n");
+var books = new List<Book>();
 
-var books  = new List<Book>();
+var booksMachadoAssis = new List<Book>();
+var booksJorgeAmado = new List<Book>();
 
+Console.WriteLine("Instantiating the category class" + "\n");
 var romance = new Category(1, "Romance", "The novel is a narrative literary form written in prose that became popular in " +
     "Western literature during the 19th century.");
-
 var fiction = new Category(2, "Fiction", "Fiction books are those that tell an imagined story, without necessarily having anything to do with reality");
 
-var machadoAssis = new Author(1, books, "Joaquim Maria Machado de Assis was a Brazilian writer, considered by many critics, scholars, writers and " +
+Console.WriteLine("Instantiating the author class" + "\n");
+var machadoAssis = new Author(1, "Joaquim Maria Machado de Assis", booksMachadoAssis, "Joaquim Maria Machado de Assis was a Brazilian writer, considered by many critics, scholars, writers and " +
     "readers the greatest name in Brazilian literature.");
-
-var jorgeAmado = new Author(2, books, "Jorge Amado was one of the most famous and translated Brazilian writers of all time," +
+var jorgeAmado = new Author(2, "Jorge Amado", booksJorgeAmado, "Jorge Amado was one of the most famous and translated Brazilian writers of all time," +
     " being the author most adapted for film, theater and television.");
 
+Console.WriteLine("Instantiating the book class" + "\n");
 var domCasmurro = new Book(
     1,
     "Dom Casmurro",
@@ -65,17 +65,57 @@ var marMorto = new Book(
     true
     );
 
+Console.WriteLine("Adding books to the list" + "\n");
 books.Add(domCasmurro);
 books.Add(brasCubas);
 books.Add(capitaesDaAreia);
 books.Add(marMorto);
 
-foreach (var book in books) 
+Console.WriteLine("Displaying book lists with foreach" + "\n");
+foreach (var book in books)
 {
-    Console.WriteLine("id: " book.id);
+    if (book.author.name == "Joaquim Maria Machado de Assis") {
+        booksMachadoAssis.Add(book);
+    }
+    else if (book.author.name == "Jorge Amado")
+    {
+        booksJorgeAmado.Add(book);
+    }
+
+    Console.WriteLine("id: " + book.id);
     Console.WriteLine("name: " + book.name);
     Console.WriteLine("description: " + book.description);
-    Console.WriteLine("author: " + book.author);
-    Console.WriteLine("category: " + book.category);
-    Console.WriteLine("available: " + book.available);
+    Console.WriteLine("author: " + book.author.name);
+    Console.WriteLine("category: " + book.category.name);
+    Console.WriteLine("available: " + (book.available ? "Disponível" : "Não disponível") + "\n");
 }
+
+var rental = new Rental
+{
+    
+};
+
+var address = new Address
+{
+
+};
+
+var person = new Person
+{
+    id = 1,
+    name = "Test",
+    birth = DateTime.Now,
+    address = address,
+    cpf = "",
+    email = "Test",
+    phone = "Test",
+};
+
+var unit = new Unit
+{
+    id = 1,
+    name = string.Empty,
+    address = address,
+    books = books,
+    rental = rental
+};

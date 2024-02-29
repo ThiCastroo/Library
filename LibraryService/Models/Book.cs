@@ -8,12 +8,12 @@ namespace LibraryService.Models
 {
     public class Book
     {
-        private int id { get; set; }
-        private string name { get; set; }
-        private string description { get; set; }
-        private Author author { get; set; }
-        internal Category category { get; set; }
-        private bool available { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public Author author { get; set; }
+        public Category category { get; set; }
+        public bool available { get; set; }
 
         public Book(int id)
         {

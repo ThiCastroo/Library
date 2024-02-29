@@ -8,17 +8,20 @@ namespace LibraryService.Models
 {
     public class Author : Person
     {
-        private int id { get; set; }
-        private List<Book> books { get; set; }
-        private string biography { get; set; }
+        public int id { get; set; }
+        public List<Book> books { get; set; }
+        public string biography { get; set; }
         
         public Author() { }
 
-        public Author(int id, List<Book> books, string biography)
+        public Author(int id, string name,List<Book> books, string biography) 
         {
             this.id = id;
+            this.name = name;
             this.books = books;
             this.biography = biography;
         }
+
+
     }
 }

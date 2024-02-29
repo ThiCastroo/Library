@@ -9,13 +9,13 @@ namespace LibraryService.Models
     public class Address
     {
 
-        private int id { get; set; }
-        private string neighborhood { get; set; }
-        private string city { get; set; }
-        private string state { get; set; }
-        private string country { get; set; }
-        private string zipCode { get; set; }
-        private string complement { get; set; }
+        public int id { get; set; }
+        public string neighborhood { get; set; }
+        public string city { get; set; }
+        public string state { get; set; }
+        public string country { get; set; }
+        public string zipCode { get; set; }
+        public string complement { get; set; }
 
         public Address() { }
 

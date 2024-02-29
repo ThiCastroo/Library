@@ -8,13 +8,13 @@ namespace LibraryService.Models
 {
     public class Person
     {
-        private int id { get; set; }
-        private string name { get; set; }
-        private DateTime birth { get; set; }
-        private string cpf { get; set; }
-        private string email { get; set; }
-        private string phone { get; set; }
-        private Address address { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public DateTime birth { get; set; }
+        public string cpf { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+        public Address address { get; set; }
 
         public Person() { }
 

@@ -9,9 +9,9 @@ namespace LibraryService.Models
     public class Category
     {
 
-        private int id { get; set; }
-        private string name { get; set; }
-        private string description { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
 
         public Category() { }
 
