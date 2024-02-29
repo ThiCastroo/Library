@@ -21,7 +21,7 @@ var machadoAssis = new Author(1, books, "Joaquim Maria Machado de Assis was a Br
 var jorgeAmado = new Author(2, books, "Jorge Amado was one of the most famous and translated Brazilian writers of all time," +
     " being the author most adapted for film, theater and television.");
 
-var book = new Book(
+var domCasmurro = new Book(
     1,
     "Dom Casmurro",
     "Dom Casmurro tells the story of Bento Santiago (Bentinho), nicknamed Dom Casmurro for being quiet and introverted. " +
@@ -32,7 +32,7 @@ var book = new Book(
     true
     );
 
-var book2 = new Book(
+var brasCubas = new Book(
     2,
     "Memórias Póstumas de Brás Cubas",
     "After his death in 1869, Brás Cubas decides to narrate his story and revisit the most important events of his life in order to distract himself " +
@@ -43,7 +43,7 @@ var book2 = new Book(
     true
     );
 
-var book3 = new Book(
+var capitaesDaAreia = new Book(
     3,
     "Capitães da Areia",
     "Pedro Bala, Professor, Gato, Sem Pernas and Boa Vida are teenagers abandoned by their families, who grow up on the streets of Salvador and live in a " +
@@ -55,7 +55,7 @@ var book3 = new Book(
     true
     );
 
-var book4 = new Book(
+var marMorto = new Book(
     4,
     "Mar Morto",
     "The life of sailors on the docks of Salvador, with its rich mythology revolving around Iemanjá, is the central theme of Mar morto, " +
@@ -65,6 +65,17 @@ var book4 = new Book(
     true
     );
 
+books.Add(domCasmurro);
+books.Add(brasCubas);
+books.Add(capitaesDaAreia);
+books.Add(marMorto);
 
-
-
+foreach (var book in books) 
+{
+    Console.WriteLine("id: " book.id);
+    Console.WriteLine("name: " + book.name);
+    Console.WriteLine("description: " + book.description);
+    Console.WriteLine("author: " + book.author);
+    Console.WriteLine("category: " + book.category);
+    Console.WriteLine("available: " + book.available);
+}

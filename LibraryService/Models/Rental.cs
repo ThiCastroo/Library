@@ -10,38 +10,42 @@ namespace LibraryService.Models
     {
         private int id { get; set; }
         private DateTime initialRentalDate { get; set; }
-        private DateTime limitDate { get; set; }
+        internal DateTime limitDate { get; set; }
         private DateTime returnDate { get; set; }
-        private Book book { get; set; }
-        private decimal rentalAmount { get; set; }
-        private int fee { get; set; }
+        internal Book book { get; set; }
+        internal decimal rentalPrice { get; set; }
 
-        public Rental() { }
+        public Rental()
+        { }
 
-        public Rental(int id, DateTime initialRentalDate, DateTime limitDate, DateTime returnDate, Book book, decimal rentalAmount, int fee)
+        public Rental(int id, DateTime initialRentalDate, DateTime limitDate, DateTime returnDate, Book book, decimal rentalPrice)
         {
             this.id = id;
             this.initialRentalDate = initialRentalDate;
             this.limitDate = limitDate;
             this.returnDate = returnDate;
             this.book = book;
-            this.rentalAmount = rentalAmount;
-            this.fee = fee;
+            this.rentalPrice = rentalPrice;
         }
 
         internal virtual string bookReservation()
         {
-            return "This method will be overrided";
+            return "This method will be overwritten.";
         }
 
         private DateTime defineLimitDate(DateTime initialRentalDate)
         {
-            return DateTime.Now;
+            return initialRentalDate.AddDays(30);
         }
 
-        protected decimal calcFee(decimal rentalAmount, int fee)
+        protected decimal calcFee(decimal rentalPrice, int daysLate)
         {
-            return calcFee(0, fee);
+            return daysLate > 0 ? rentalPrice * 0.05m * daysLate : 0; // Example: 5% of the rental price per day of delay
+        }
+
+        public decimal applyFee(int daysLate)
+        {
+            return calcFee(rentalPrice, daysLate);
         }
 
     }
