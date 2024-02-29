@@ -11,16 +11,14 @@ namespace LibraryService.Models
         private int id { get; set; }
         private List<Book> books { get; set; }
         private string biography { get; set; }
-        private List<string> publishers { get; set; }
         
         public Author() { }
 
-        public Author(int id, List<Book> books, string biography, List<string> publishers)
+        public Author(int id, List<Book> books, string biography)
         {
             this.id = id;
             this.books = books;
             this.biography = biography;
-            this.publishers = publishers;
         }
     }
 }
