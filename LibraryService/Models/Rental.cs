@@ -13,19 +13,18 @@ namespace LibraryService.Models
         internal DateTime limitDate { get; set; }
         private DateTime returnDate { get; set; }
         internal Book book { get; set; }
-        internal decimal rentalPrice { get; set; }
+        internal decimal rentalAmount { get; set; }
 
-        public Rental()
-        { }
+        public Rental() { }
 
-        public Rental(int id, DateTime initialRentalDate, DateTime limitDate, DateTime returnDate, Book book, decimal rentalPrice)
+        public Rental(int id, DateTime initialRentalDate, DateTime limitDate, DateTime returnDate, Book book, decimal rentalAmount)
         {
             this.id = id;
             this.initialRentalDate = initialRentalDate;
             this.limitDate = limitDate;
             this.returnDate = returnDate;
             this.book = book;
-            this.rentalPrice = rentalPrice;
+            this.rentalAmount = rentalAmount;
         }
 
         internal virtual string bookReservation()
@@ -47,6 +46,5 @@ namespace LibraryService.Models
         {
             return calcFee(rentalPrice, daysLate);
         }
-
     }
 }
