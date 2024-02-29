@@ -44,7 +44,7 @@ var book2 = new Book(
     );
 
 var book3 = new Book(
-    1,
+    3,
     "Capitães da Areia",
     "Pedro Bala, Professor, Gato, Sem Pernas and Boa Vida are teenagers abandoned by their families, who grow up on the streets of Salvador and live in a " +
     "community in Trapiche. They commit a series of robberies and are constantly pursued by the police. One day, Professor meets Dora and her brother " +
